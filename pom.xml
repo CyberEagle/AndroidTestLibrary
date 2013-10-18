@@ -12,7 +12,7 @@
 	<packaging>jar</packaging>
 	<name>Cyber Eagle's Android Test Library</name>
     <description>Android library project designed to provid test utilities used by Cyber Eagle android projects.</description>
-    <url>https://github.com/CyberEagle/OpenProjects/tree/master/android-projects/library</url>
+    <url>https://github.com/CyberEagle/AndroidTestLibrary</url>
 
     <licenses>
         <license>
