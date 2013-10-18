@@ -1,4 +1,4 @@
 AndroidTestLibrary
 ==================
 
-A project with code to help testing the other android projects.
+Android library project designed to provid test utilities used by Cyber Eagle android projects

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>br.com.cybereagle</groupId>
+		<artifactId>base-android-project</artifactId>
+		<version>1.0.0</version>
+	</parent>
+	<artifactId>androidtestlibrary</artifactId>
+	<version>1.0.0</version>
+	<packaging>jar</packaging>
+	<name>Cyber Eagle's Android Test Library</name>
+    <description>Android library project designed to provid test utilities used by Cyber Eagle android projects.</description>
+    <url>https://github.com/CyberEagle/OpenProjects/tree/master/android-projects/library</url>
+
+    <licenses>
+        <license>
+            <name>Apache License Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Fernando Camargo</name>
+            <id>fernandocamargo</id>
+            <roles>
+                <role>Owner</role>
+                <role>Developer</role>
+            </roles>
+        </developer>
+    </developers>
+
+    <issueManagement>
+        <system>JIRA</system>
+        <url>https://cybereagle.atlassian.net/browse/ATL</url>
+    </issueManagement>
+
+    <scm>
+        <url>https://github.com/CyberEagle/AndroidTestLibrary</url>
+        <connection>scm:git:git://github.com/CyberEagle/AndroidTestLibrary.git</connection>
+        <developerConnection>scm:git:git@github.com:CyberEagle/AndroidTestLibrary.git</developerConnection>
+    </scm>
+
+	<dependencies>
+        <dependency>
+            <groupId>br.com.cybereagle</groupId>
+            <artifactId>commonlibrary</artifactId>
+        </dependency>
+		<dependency>
+			<groupId>com.google.android</groupId>
+			<artifactId>support-v4</artifactId>
+			<version>${support.v4.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.roboguice</groupId>
+			<artifactId>roboguice</artifactId>
+			<scope>provided</scope>
+		</dependency>		
+		<!--<dependency>-->
+			<!--<groupId>com.actionbarsherlock</groupId>-->
+			<!--<artifactId>actionbarsherlock</artifactId>-->
+		<!--</dependency>		-->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-all</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.robolectric</groupId>
+			<artifactId>robolectric</artifactId>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>2.1.2</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
