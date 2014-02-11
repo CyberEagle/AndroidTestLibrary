@@ -1,0 +1,66 @@
+apply plugin: 'android-library'
+apply plugin: 'checkstyle'
+
+configurations {
+	provided
+}
+
+dependencies {
+  compile 'br.com.cybereagle:commonlibrary:1.0.0'
+  provided 'com.android.support:support-v4:19.0.+'
+  provided 'org.roboguice:roboguice:2.0'
+  compile 'junit:junit:4.8.2'
+  compile 'org.mockito:mockito-all:1.9.5'
+  compile 'com.squareup:fest-android:1.0.+'
+  compile ('org.robolectric:robolectric:2.3-SNAPSHOT'){
+    exclude group: 'com.android.support', module: 'support-v4'
+  }
+}
+
+android {
+  compileSdkVersion Integer.parseInt(project.ANDROID_BUILD_SDK_VERSION)
+  buildToolsVersion project.ANDROID_BUILD_TOOLS_VERSION
+
+  defaultConfig {
+    packageName "br.com.cybereagle.testlibrary"
+  
+    minSdkVersion 14
+    targetSdkVersion Integer.parseInt(project.ANDROID_BUILD_TARGET_SDK_VERSION)
+  }
+
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_7
+    targetCompatibility JavaVersion.VERSION_1_7
+  }
+
+  lintOptions {
+    abortOnError false
+  }
+}
+
+//checkstyle {
+//  configFile project.file('checkstyle.xml')
+//  showViolations true
+//}
+
+android.libraryVariants.all { variant ->
+  // Configure provided dependencies
+  variant.javaCompile.classpath += configurations.provided 
+
+  def name = variant.buildType.name
+
+//  def checkstyle = project.tasks.create "checkstyle${name.capitalize()}", Checkstyle
+//  checkstyle.dependsOn variant.javaCompile
+//  checkstyle.source variant.javaCompile.source
+//  checkstyle.classpath = project.fileTree(variant.javaCompile.destinationDir)
+//  checkstyle.exclude('**/BuildConfig.java')
+//  project.tasks.getByName("check").dependsOn checkstyle
+
+  // Create JAR
+  def task = project.tasks.create "jar${name.capitalize()}", Jar
+  task.dependsOn variant.javaCompile
+  task.from variant.javaCompile.destinationDir
+  artifacts.add('archives', task);
+}
+
+apply from: 'https://raw.github.com/chrisbanes/gradle-mvn-push/master/gradle-mvn-push.gradle'
