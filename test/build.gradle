@@ -52,5 +52,5 @@ if (propFile.exists()) {
 apply plugin: 'android-unit-test'
 
 dependencies {
-    testCompile project(':library')
+    compile project(':library')
 }
