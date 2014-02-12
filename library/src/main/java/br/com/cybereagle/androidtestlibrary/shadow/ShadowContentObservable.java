@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package br.com.cybereagle.testlibrary.shadow;
+package br.com.cybereagle.androidtestlibrary.shadow;
 
 import android.database.ContentObservable;
 import android.database.ContentObserver;

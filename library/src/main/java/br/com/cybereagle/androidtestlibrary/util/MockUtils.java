@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package br.com.cybereagle.testlibrary.util;
+package br.com.cybereagle.androidtestlibrary.util;
 
 public class MockUtils {
 

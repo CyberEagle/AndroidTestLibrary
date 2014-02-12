@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package br.com.cybereagle.testlibrary.util;
+package br.com.cybereagle.androidtestlibrary.util;
 
 import android.support.v4.content.AsyncTaskLoader;
 import android.support.v4.content.AsyncTaskLoaderSpier;

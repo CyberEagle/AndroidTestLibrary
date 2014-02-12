@@ -1,4 +1,4 @@
-package br.com.cybereagle.testlibrary;
+package br.com.cybereagle.androidtestlibrary;
 
 import com.google.inject.Module;
 import org.junit.runner.RunWith;

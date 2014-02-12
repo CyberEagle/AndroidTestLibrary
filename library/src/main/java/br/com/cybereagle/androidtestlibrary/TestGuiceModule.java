@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package br.com.cybereagle.testlibrary;
+package br.com.cybereagle.androidtestlibrary;
 
 import android.app.Application;
 import android.util.Log;
