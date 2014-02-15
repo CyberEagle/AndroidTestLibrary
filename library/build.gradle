@@ -7,7 +7,7 @@ configurations {
 
 dependencies {
   compile 'br.com.cybereagle:commonlibrary:1.0.0-SNAPSHOT'
-  provided 'com.android.support:support-v4:19.0.+'
+  compile 'com.android.support:support-v4:19.0.+'
   provided 'org.roboguice:roboguice:2.0'
   compile 'junit:junit:4.8.2'
   compile 'org.mockito:mockito-all:1.9.5'

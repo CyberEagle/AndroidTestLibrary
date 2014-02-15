@@ -52,5 +52,19 @@ if (propFile.exists()) {
 apply plugin: 'android-unit-test'
 
 dependencies {
-    compile project(':library')
+    compile (project(':library')){
+        exclude module: 'junit'
+        exclude module: 'mockito-all'
+        exclude module: 'fest-android'
+        exclude module: 'robolectric'
+        exclude module: 'support-v4'
+    }
+    
+    testCompile 'com.android.support:support-v4:19.0.+'
+    testCompile 'junit:junit:4.8.2'
+    testCompile 'org.mockito:mockito-all:1.9.5'
+    testCompile 'com.squareup:fest-android:1.0.+'
+    testCompile ('org.robolectric:robolectric:2.3-SNAPSHOT'){
+      exclude group: 'com.android.support', module: 'support-v4'
+    }
 }
