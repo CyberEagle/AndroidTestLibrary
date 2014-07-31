@@ -1,4 +1,4 @@
-apply plugin: 'android-library'
+apply plugin: 'com.android.library'
 apply plugin: 'checkstyle'
 
 configurations {
@@ -7,12 +7,12 @@ configurations {
 
 dependencies {
   compile 'br.com.cybereagle:commonlibrary:1.0.0-SNAPSHOT'
-  compile 'com.android.support:support-v4:19.0.+'
+  compile 'com.android.support:support-v4:19.1.0'
   provided 'org.roboguice:roboguice:2.0'
-  compile 'junit:junit:4.8.2'
+  compile 'junit:junit:4.10'
   compile 'org.mockito:mockito-all:1.9.5'
   compile 'com.squareup:fest-android:1.0.+'
-  compile ('org.robolectric:robolectric:2.3-SNAPSHOT'){
+  compile ('org.robolectric:robolectric:2.3'){
     exclude group: 'com.android.support', module: 'support-v4'
   }
 }
@@ -22,7 +22,7 @@ android {
   buildToolsVersion project.ANDROID_BUILD_TOOLS_VERSION
 
   defaultConfig {
-    packageName "br.com.cybereagle.androidtestlibrary"
+    applicationId "br.com.cybereagle.androidtestlibrary"
   
     minSdkVersion 14
     targetSdkVersion Integer.parseInt(project.ANDROID_BUILD_TARGET_SDK_VERSION)
@@ -63,4 +63,4 @@ android.libraryVariants.all { variant ->
   artifacts.add('archives', task);
 }
 
-apply from: 'https://raw.github.com/CyberEagle/gradle-mvn-push/master/gradle-mvn-push.gradle'
+apply from: 'https://raw.githubusercontent.com/CyberEagle/gradle-mvn-push/master/gradle-mvn-push.gradle'

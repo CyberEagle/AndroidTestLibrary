@@ -37,6 +37,3 @@ proguard-project.txt
 .DS_Store
 tmp
 .directory
-
-#Don't exclude
-!test.iml

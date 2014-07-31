@@ -1,11 +1,12 @@
-apply plugin: 'android'
+apply plugin: 'com.android.application'
+apply plugin: 'robolectric'
 
 android {
     compileSdkVersion Integer.parseInt(project.ANDROID_BUILD_SDK_VERSION)
     buildToolsVersion project.ANDROID_BUILD_TOOLS_VERSION
 
     defaultConfig {
-        packageName "br.com.cybereagle.androidtestlibrary.test"
+        applicationId "br.com.cybereagle.androidtestlibrary.test"
 
         minSdkVersion 14
         targetSdkVersion Integer.parseInt(project.ANDROID_BUILD_TARGET_SDK_VERSION)
@@ -24,8 +25,6 @@ android {
     }
 }
 
-apply plugin: 'android-unit-test'
-
 dependencies {
     compile(project(':library')) {
         exclude module: 'junit'
@@ -35,11 +34,11 @@ dependencies {
         exclude module: 'support-v4'
     }
 
-    testCompile 'com.android.support:support-v4:19.0.+'
-    testCompile 'junit:junit:4.8.2'
-    testCompile 'org.mockito:mockito-all:1.9.5'
-    testCompile 'com.squareup:fest-android:1.0.+'
-    testCompile('org.robolectric:robolectric:2.3-SNAPSHOT') {
+    androidTestCompile 'com.android.support:support-v4:19.1.0'
+    androidTestCompile 'junit:junit:4.10'
+    androidTestCompile 'org.mockito:mockito-all:1.9.5'
+    androidTestCompile 'com.squareup:fest-android:1.0.+'
+    androidTestCompile('org.robolectric:robolectric:2.3') {
         exclude group: 'com.android.support', module: 'support-v4'
     }
 }
